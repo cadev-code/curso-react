@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyAwesomeApp > should match snapshot 1`] = `
+<div>
+  <div
+    data-testid="my-awesome-app"
+  >
+    <h1
+      data-testid="first-name-title"
+    >
+      Carlos
+    </h1>
+    <h3>
+      Escobedo
+    </h3>
+    <p
+      class="black"
+    >
+      Elden Ring, Ghost of Tsushima, Red Dead Redemption 2, The Legend Of Zelda Twilight Princess
+    </p>
+    <h1>
+      Active
+    </h1>
+    <p
+      style="background-color: rgb(211, 211, 211); border-radius: 20px; padding: 10px;"
+    >
+      {"street":"123 Main St","city":"Springfield","country":"USA"}
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MyAwesomeApp > should match snapshot with screen 1`] = `
+<div
+  data-testid="my-awesome-app"
+>
+  <h1
+    data-testid="first-name-title"
+  >
+    Carlos
+  </h1>
+  <h3>
+    Escobedo
+  </h3>
+  <p
+    class="black"
+  >
+    Elden Ring, Ghost of Tsushima, Red Dead Redemption 2, The Legend Of Zelda Twilight Princess
+  </p>
+  <h1>
+    Active
+  </h1>
+  <p
+    style="background-color: rgb(211, 211, 211); border-radius: 20px; padding: 10px;"
+  >
+    {"street":"123 Main St","city":"Springfield","country":"USA"}
+  </p>
+</div>
+`;
