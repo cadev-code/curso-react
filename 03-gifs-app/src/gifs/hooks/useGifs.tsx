@@ -18,6 +18,8 @@ export const useGifs = () => {
 
     const gifs = await getGifsByQuery(term);
     setGifs(gifs);
+
+    gifsCache.current[term] = gifs;
   };
 
   const handleSearch = useCallback(async (query: string = '') => {
