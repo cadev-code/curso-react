@@ -2,18 +2,15 @@
 // Es necesario componentes de Shadcn/ui
 // https://ui.shadcn.com/docs/installation/vite
 
-import React, { useReducer } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
-import {
-  getInitialState,
-  scrambleWordsReducer,
-} from './reducer/scrambleWordsReducer';
+import { useScrambleWords } from './hooks/useScrambleWords';
 
 export const ScrambleWords = () => {
-  const [state, dispatch] = useReducer(scrambleWordsReducer, getInitialState());
+  const { state, handleGuessSubmit, handlePlayAgain, handleSkip, dispatch } =
+    useScrambleWords();
 
   const {
     currentWord,
@@ -28,19 +25,6 @@ export const ScrambleWords = () => {
     totalWords,
     words,
   } = state;
-
-  const handleGuessSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    dispatch({ type: 'CHECK_ANSWER' });
-  };
-
-  const handleSkip = () => {
-    dispatch({ type: 'SKIP_WORD' });
-  };
-
-  const handlePlayAgain = () => {
-    dispatch({ type: 'PLAY_AGAIN' });
-  };
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
   if (words.length === 0) {
